@@ -16,7 +16,7 @@ Where R is the return type, P is a parameter type and just like any function the
 
 ### Motivation behind Functors
 
-With the procedural programming, the big problems are broken down into small chuncks called functions, procedures or subroutines. This was generally called top-down or bottom-up modular programming and it was the best we had. The Object-oriented programming takes modular code and places it with the data that it works with, that is, objects have properties, also known as data (member variables), and methods that operate on that data, also known as methods (member functions).
+With the procedural programming, the big problems are broken down into small chunks called functions, procedures or subroutines. This was generally called top-down or bottom-up modular programming and it was the best we had. The Object-oriented programming takes modular code and places it with the data that it works with, i.e, objects have properties, also known as data (member variables), and methods that operate on that data, also known as methods (member functions).
 
 A language that allows functions (something not connected to an object) to stand on their own can't really be called 100% object oriented. With the "everything is an object" approach in C++ we can achieve the functionality of standalone functions by the simple trick of allowing objects which are functions. 
 
@@ -56,11 +56,11 @@ int main()
 	invoker((void (*)(double*))callback_func);
 }
 ```
-3.The compiler can inline calls to the functor; it cannot do the same for a function pointer. This is why C++ `std::sort()` beats C `qsort()` performance-wise.
+3. The compiler can inline calls to the functor; it cannot do the same for a function pointer. This is why C++ `std::sort()` beats C `qsort()` performance-wise.
 
 ### How to use functors?
 
-Let's look at an example. This example creates a functor class with a constructor that takes an integer argument and saves it. When objects of the class are "called", it will return the result of mutiplying the saved value and the argument to the functor.
+Let's look at an example. This example creates a functor class with a constructor that takes an integer argument and saves it. When objects of the class are "called", it will return the result of multiplying the saved value and the argument to the functor.
 
 ```C++
 #include <iostream>
@@ -134,7 +134,7 @@ int main()
 
 You cannot pass a functor as a function pointer into a function that takes a function pointer, even if the functor has the same arguments and return value as the function pointer. Similarly, if a function expects a functor, you cannot pass in a function pointer.
 
-You must use templates if you want to allow either a function pointer or a functor to be passed into the same function. The templated function will determine the appropriate type for the functor or function pointer, and because both functors and function pointers are used in the same way—they (both look like function calls).
+You must use templates if you want to allow either a function pointer or a functor to be passed into the same function. The templated function will determine the appropriate type for the functor or function pointer, and because both functors and function pointers are used in the same way, they both look like function calls.
 
 Below is example code to print the elements of vector using a template function that accepts both function pointer as well as function object as an argument.
 
